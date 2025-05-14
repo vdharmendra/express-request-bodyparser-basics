@@ -44,6 +44,7 @@ npm install express body-parser
 
 
 📝 Example Code
+```bash
 // jshintversion:6
 // EXPRESS 
 const express = require('express');
@@ -73,6 +74,7 @@ app.post("/", function(req,res){
 });
 
 
+
 views/index.html (Simple Form)
 
 <h1>BMI CALC</h1>
@@ -83,7 +85,7 @@ views/index.html (Simple Form)
   <input type="text" id="height" name="height" value=""><br><br>
   <input type="submit" value="Submit">
 </form> 
-
+```
 
 
 ✅ What You’ll Learn
