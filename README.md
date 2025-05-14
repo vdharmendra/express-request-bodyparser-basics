@@ -43,6 +43,49 @@ npm init -y
 npm install express body-parser
 
 
+📝 Example Code
+// jshintversion:6
+// EXPRESS 
+const express = require('express');
+// BODY-PERSER
+const bodyParser = require('body-parser')
+
+const app = express();
+
+app.use(bodyParser.urlencoded({extend:true}));
+
+
+// HANDLING REQUEST & RESPONSE [ GET Request ]
+// sendFile function used [ not send function ]
+app.get("/", function(Req, res){
+    res.sendFile(__dirname+'/index.html');
+});
+
+//  HANDLING REQUEST & RESPONSE [ POST Request ]
+
+app.post("/", function(req,res){
+    var w = Number(req.body.weight);
+    var h = Number(req.body.height);
+
+    // console.log("w is "+w +" \n h is"+ h);
+    var bmi = (w/(h*h));
+    res.send("bmi= "+ bmi);
+});
+
+
+views/index.html (Simple Form)
+
+<h1>BMI CALC</h1>
+<form action="/" method="post">
+  <label for="weight">weight:</label><br>
+  <input type="text" id="weight" name="weight" value=""><br>
+  <label for="height">height:</label><br>
+  <input type="text" id="height" name="height" value=""><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+
+
 ✅ What You’ll Learn
 Basic Express server setup
 
